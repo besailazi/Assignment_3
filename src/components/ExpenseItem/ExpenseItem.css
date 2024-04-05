@@ -1,3 +1,8 @@
+div {
+	background-color: #fb90b7;
+	border-radius: 10px;
+	padding: 10px;
+}
 .add-expense-container {
 	display: flex;
 	flex-direction: row;

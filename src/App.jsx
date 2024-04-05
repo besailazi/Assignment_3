@@ -2,7 +2,7 @@ import { useState } from 'react'
 import ExpenseForm from './components/ExpenseForm/ExpenseForm';
 import ExpenseList from './components/ExpenseList/ExpenseList';
 import TotalExpense from './components/TotalExpense/TotalExpense';
-import './App.css'
+import './App.module.css'
 
 function App() {
   const [expenses, setExpenses] = useState([]);
