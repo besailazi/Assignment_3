@@ -9,9 +9,11 @@ const ExpenseForm = ({ addExpense }) => {
   const [category, setCategory] = useState('-'); 
   const [errors, setErrors] = useState({});
 
+  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Validation for title input
     if (!title.trim()) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -20,6 +22,7 @@ const ExpenseForm = ({ addExpense }) => {
       return;
     }
 
+    // Validation for amount input
     if (!amount.trim()) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -28,6 +31,7 @@ const ExpenseForm = ({ addExpense }) => {
       return;
     }
 
+    // Validation for date input
     if (!date.trim()) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -36,6 +40,7 @@ const ExpenseForm = ({ addExpense }) => {
       return;
     }
 
+    // Validation for category selection
     if (category === '-') {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -58,6 +63,7 @@ const ExpenseForm = ({ addExpense }) => {
     
     <form onSubmit={handleSubmit}>
       <div>
+        <label>Add Title</label>
         <input
           type="text"
           placeholder="Title"
@@ -67,6 +73,7 @@ const ExpenseForm = ({ addExpense }) => {
         {errors.title && <span className="error">{errors.title}</span>}
       </div>
       <div>
+        <label>Add Amount</label>
         <input
           type="number"
           placeholder="Amount"
@@ -76,6 +83,7 @@ const ExpenseForm = ({ addExpense }) => {
         {errors.amount && <span className="error">{errors.amount}</span>}
       </div>
       <div>
+        <label>Choose a Category</label>
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
@@ -90,6 +98,7 @@ const ExpenseForm = ({ addExpense }) => {
         {errors.category && <span className="error">{errors.category}</span>}
       </div>
       <div>
+        <label>Date</label>
         <input
           type="date"
           value={date}

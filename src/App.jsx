@@ -7,10 +7,12 @@ import './App.module.css'
 function App() {
   const [expenses, setExpenses] = useState([]);
 
+  // Function to add an expense
   const addExpense = (expense) => {
     setExpenses([...expenses, { ...expense, id: expenses.length + 1 }]);
   };
 
+  // Function to delete an expense
   const deleteExpense = (id) => {
     setExpenses(expenses.filter((expense) => expense.id !== id));
   };

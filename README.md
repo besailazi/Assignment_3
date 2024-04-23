@@ -18,3 +18,7 @@ This is a simple Expense Tracker App built with React. The application allows us
 - Each expense record has a delete button.
 - Total amount of expenses displayed and updated.
   
+## Sources
+
+- https://react.dev/reference/
+- https://www.w3schools.com/REACT/DEFAULT.ASP

@@ -3,6 +3,7 @@ import './ExpenseItem.css';
 
 const ExpenseItem = ({ expense, deleteExpense }) => {
   return (
+    // Container for each expense item
     <ul className='add-expense-container'>
       <li>{expense.title}</li>
       <li>{expense.amount}</li>
