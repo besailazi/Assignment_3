@@ -4,6 +4,7 @@
 	font-size: 12px;
 	margin-top: 4px;
  }
+
  label {
 	display: flex;
 	flex-direction: column;
@@ -11,7 +12,7 @@
 
  .submit-button {
 	background-color: white;
-	padding: 0.6rem;
+	padding: 0.3rem;
 	font-size: 1rem;
 	cursor: pointer;
 	border: 1px solid black;
@@ -19,7 +20,7 @@
  }
 
  .submit-button:hover{
-	background-color: rgb(181, 92, 186);
+	background-color: #485b54;
 }
 
 option {

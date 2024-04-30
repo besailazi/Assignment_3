@@ -4,7 +4,7 @@ import './ExpenseItem.css';
 const ExpenseItem = ({ expense, deleteExpense }) => {
   return (
     // Container for each expense item
-    <div className='expense-item-container'>
+    <div>
       <table>
         <tbody>
           <tr>

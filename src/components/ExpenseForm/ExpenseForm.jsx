@@ -72,7 +72,7 @@ const ExpenseForm = ({ addExpense }) => {
           value={category}
           onChange={(e) => setCategory(e.target.value)}
         >
-          <option value="-">Choose Category</option>
+          <option value="-">-</option>
           <option value="housing">Housing</option>
           <option value="grocery">Grocery</option>
           <option value="transportation">Transportation</option>

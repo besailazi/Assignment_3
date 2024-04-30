@@ -1,12 +1,7 @@
 div {
-	background-color: #fb90b7;
+	background-color: #a5c3b0;
 	border-radius: 10px;
 	padding: 10px;
-}
-.add-expense-container {
-	display: flex;
-	flex-direction: row;
-	gap: 1.5rem;
 }
 
 li{
@@ -15,7 +10,7 @@ list-style-type: none;
 
 .delete-button{
 	background-color: white;
-	padding: 0.5rem;
+	padding: 0.2rem;
 	font-size: 0.8rem;
 	cursor: pointer;
 	border: 1px solid black;
@@ -23,5 +18,15 @@ list-style-type: none;
 }
 
 .delete-button:hover{
-	background-color: rgb(181, 92, 186);
+	background-color: #485b54;
 }
+
+table {
+	width: 100%;
+	border-collapse: collapse;	
+}
+
+td {
+	padding: 8px;
+	border: 1px solid black; 
+ }
