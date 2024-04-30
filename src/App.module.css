@@ -1,6 +1,4 @@
 .App {
-  width: 1000px;
-  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,8 +8,7 @@
 }
 
 h1{
- margin-top: 0;
- margin-bottom: 50px;
+ margin-bottom: 30px;
 }
 
 form {
@@ -30,20 +27,9 @@ input, select, button {
 
 
 @media (max-width: 768px) {
-  .App {
-    width: 90%; 
-    height: auto;
-    padding: 20px;
-  }
-
-  h1 {
-    margin-bottom: 20px;
-  }
-
+  
   form {
-    width: 100%;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
   }
 

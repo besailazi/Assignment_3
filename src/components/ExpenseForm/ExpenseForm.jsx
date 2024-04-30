@@ -5,7 +5,7 @@ const ExpenseForm = ({ addExpense }) => {
   const [title, setTitle] = useState('');
   const [amount, setAmount] = useState('');
   const [date, setDate] = useState('');
-  const [category, setCategory] = useState('-'); // Default value changed to "-"
+  const [category, setCategory] = useState('-'); 
   const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
@@ -39,7 +39,7 @@ const ExpenseForm = ({ addExpense }) => {
 
     setTitle('');
     setAmount('');
-    setCategory('-'); // Reset category to "-"
+    setCategory('-');
     setDate('');
     setErrors({});
   };
