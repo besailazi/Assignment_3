@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 import './ExpenseForm.css';
 
-
 const ExpenseForm = ({ addExpense }) => {
   const [title, setTitle] = useState('');
   const [amount, setAmount] = useState('');
   const [date, setDate] = useState('');
-  const [category, setCategory] = useState('-'); 
+  const [category, setCategory] = useState('-'); // Default value changed to "-"
   const [errors, setErrors] = useState({});
 
-  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validation for title input
     if (!title.trim()) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -22,7 +19,6 @@ const ExpenseForm = ({ addExpense }) => {
       return;
     }
 
-    // Validation for amount input
     if (!amount.trim()) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -31,7 +27,6 @@ const ExpenseForm = ({ addExpense }) => {
       return;
     }
 
-    // Validation for date input
     if (!date.trim()) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -40,27 +35,16 @@ const ExpenseForm = ({ addExpense }) => {
       return;
     }
 
-    // Validation for category selection
-    if (category === '-') {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        category: 'Category is required',
-      }));
-      return;
-    }
+    addExpense({ title, amount, category, date });
 
-    addExpense({ title, amount, category, date  });
-
-    
     setTitle('');
     setAmount('');
-    setCategory('-');
+    setCategory('-'); // Reset category to "-"
     setDate('');
     setErrors({});
   };
 
   return (
-    
     <form onSubmit={handleSubmit}>
       <div>
         <label>Add Title</label>
@@ -108,8 +92,6 @@ const ExpenseForm = ({ addExpense }) => {
       </div>
       <button className='submit-button' type="submit">Add Expense</button>
     </form>
-
-
   );
 };
 

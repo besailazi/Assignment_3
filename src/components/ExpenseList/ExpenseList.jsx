@@ -1,7 +1,10 @@
 import React from 'react';
+
 import ExpenseItem from '../ExpenseItem/ExpenseItem';
 
 const ExpenseList = ({ expenses, deleteExpense }) => {
+
+  
   return (
     // Container for the list of expenses
     <div>
