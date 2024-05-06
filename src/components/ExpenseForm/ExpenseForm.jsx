@@ -8,6 +8,7 @@ const ExpenseForm = ({ addExpense }) => {
   const [category, setCategory] = useState('-'); 
   const [errors, setErrors] = useState({});
 
+  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -17,6 +18,11 @@ const ExpenseForm = ({ addExpense }) => {
         title: 'Title is required',
       }));
       return;
+    } else {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        title: '',
+      }));
     }
 
     if (!amount.trim()) {
@@ -25,6 +31,11 @@ const ExpenseForm = ({ addExpense }) => {
         amount: 'Amount is required',
       }));
       return;
+    } else {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        amount: '',
+      }));
     }
 
     if (!date.trim()) {
@@ -33,6 +44,11 @@ const ExpenseForm = ({ addExpense }) => {
         date: 'Date is required',
       }));
       return;
+    } else {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        date: '',
+      }));
     }
 
     addExpense({ title, amount, category, date });
@@ -44,6 +60,46 @@ const ExpenseForm = ({ addExpense }) => {
     setErrors({});
   };
 
+  // Function to handle title input change
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
+    
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      title: '',
+    }));
+  };
+
+  // Function to handle amount input change
+  const handleAmountChange = (e) => {
+    setAmount(e.target.value);
+   
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      amount: '',
+    }));
+  };
+
+  // Function to handle date input change
+  const handleDateChange = (e) => {
+    setDate(e.target.value);
+  
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      date: '',
+    }));
+  };
+
+  // Function to handle category input change
+  const handleCategoryChange = (e) => {
+    setCategory(e.target.value);
+    
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      category: '',
+    }));
+  };
+
   return (
     <form onSubmit={handleSubmit}>
       <div>
@@ -52,7 +108,7 @@ const ExpenseForm = ({ addExpense }) => {
           type="text"
           placeholder="Title"
           value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={handleTitleChange} 
         />
         {errors.title && <span className="error">{errors.title}</span>}
       </div>
@@ -62,7 +118,7 @@ const ExpenseForm = ({ addExpense }) => {
           type="number"
           placeholder="Amount"
           value={amount}
-          onChange={(e) => setAmount(e.target.value)}
+          onChange={handleAmountChange} 
         />
         {errors.amount && <span className="error">{errors.amount}</span>}
       </div>
@@ -70,7 +126,7 @@ const ExpenseForm = ({ addExpense }) => {
         <label>Choose a Category</label>
         <select
           value={category}
-          onChange={(e) => setCategory(e.target.value)}
+          onChange={handleCategoryChange} 
         >
           <option value="-">-</option>
           <option value="housing">Housing</option>
@@ -86,7 +142,7 @@ const ExpenseForm = ({ addExpense }) => {
         <input
           type="date"
           value={date}
-          onChange={(e) => setDate(e.target.value)}
+          onChange={handleDateChange} 
         />
         {errors.date && <span className="error">{errors.date}</span>}
       </div>
